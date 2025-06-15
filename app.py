@@ -16,10 +16,10 @@ def enviar():
     print(df)
 
     df['Semestre'] = df['Semestre'].astype(int)
-    df['Nota'] = df['Nota'].astype(int)
+    df['Notas'] = df['Notas'].astype(int)
 
     x = df['Semestre'].values.reshape(-1, 1)
-    y = df['Nota'].values
+    y = df['Notas'].values
 
     modelo = LinearRegression()
     modelo.fit(x, y)

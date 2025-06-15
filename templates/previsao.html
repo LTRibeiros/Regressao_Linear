@@ -7,9 +7,22 @@
 </head>
 <body class="bg-blue-200 min-h-screen flex flex-col justify-center items-center">
 
-<div class="text-3xl text-center p-3"><strong>Resultado da Regressão Linear</strong></div>
-<br>
-<div class="p-3 text-2xl text-center">Baseado nas notas anteriores, a nota prevista para o {{ proximo_semestre }} semestre é: {{ previsao }}</div>
 
+<div class="py-8 px-6 bg-blue-50 rounded-lg shadow-lg text-center w-full max-w-3xl">
+    <div class="text-3xl text-gray-800 font-bold mb-4">
+        Resultado da Regressão Linear
+    </div>
+    <div class="text-2xl text-gray-700 mb-6">
+        Baseado nas notas anteriores, a nota prevista para o
+        <span class="text-blue-500 font-bold">{{ proximo_semestre }}</span> semestre é:
+        <span class="text-blue-600 font-bold">{{ previsao }}</span>
+    </div>
+    <a
+            href="/"
+            class="mt-4 inline-block rounded-md bg-blue-500 px-6 py-3 text-lg font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+    >
+        Voltar à Página Inicial
+    </a>
+</div>
 </body>
 </html>
