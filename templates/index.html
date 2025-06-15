@@ -6,20 +6,65 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="bg-blue-200">
-<div>
-    <div class="text-3xl container mx-auto text-center">
-        Previsão de notas
-    </div>
-    <div class="container mx-auto text-center py-4">
-        <div>
-            <form method="POST" action="/enviar" enctype="multipart/form-data">
-                <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
-                <input class="bg-white rounded-md space-y-4" type="submit" value="Enviar arquivo">
+<body>
+<div class="bg-blue-200 min-h-screen flex flex-col justify-center items-center">
+    <div class="text-center w-full max-w-3xl">
+        <div class="text-2xl font-bold mb-6 text-gray-800">
+            Previsão de Notas - Estudo de machine learning
+        </div>
+
+        <div class="py-8 px-6 bg-blue-50 rounded-lg shadow-lg">
+            <form
+                method="POST"
+                action="/enviar"
+                enctype="multipart/form-data"
+                class="space-y-6"
+            >
+                <div>
+                    <label
+                        for="csvFile"
+                        class="block text-lg font-medium text-gray-700 mb-3">
+                        Selecione o arquivo de notas:
+                    </label>
+                    <input
+                        type="file"
+                        id="csvFile"
+                        name="csvFile"
+                        accept=".csv"
+                        required
+                        class="block w-full cursor-pointer rounded-lg border border-gray-300 bg-blue-500 px-4 py-3 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    >
+                </div>
+
+                <input
+                    type="submit"
+                    value="Enviar arquivo"
+                    class="w-full rounded-md bg-blue-500 px-4 py-3 text-lg font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer"
+                >
             </form>
         </div>
     </div>
-</div>
+    </div>
+   <div class="absolute top-4 left-4">
+        <div class="relative group">
+            <div class="text-blue-500 font-bold cursor-pointer">
+                ⓘ Como funciona
+            </div>
 
+            <div class="absolute left-full top-0 ml-2 hidden w-max rounded-md bg-blue-500 px-4 py-2 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:block">
+                Essa aplicação utiliza um conceito de Machine Learning - a Regressão Linear, para fazer previsões baseadas em dados já existentes. Faça o upload de um arquivo .csv e experimente!
+            </div>
+        </div>
+
+        <div class="relative group">
+            <div class="text-blue-500 font-bold cursor-pointer">
+               ⓘ Arquivos aceitos
+            </div>
+
+            <div class="absolute left-full top-0 ml-2 hidden w-max rounded-md bg-blue-500 px-4 py-2 text-sm text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:block">
+                Essa aplicação aceita arquivos com duas colunas: [Semestre] e [Nota], e seus respectivos valores.
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -13,7 +13,6 @@ def hello_world():
 def enviar():
     file = request.files['csvFile']
     df = pd.read_csv(file)
-
     print(df)
 
     df['Semestre'] = df['Semestre'].astype(int)
